@@ -1,0 +1,93 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="/img/home-img.jpg" width="600" height="400" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="FarmHome">
+
+    </div>
+
+    <div class="col-12 col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">
+            A one step solution to all your fresh and fertilised product storage!
+        </h1>
+        <p class="lead">
+            Been facing problems with your offline inventory submission into the Warehouse. No need to worry anymore, Use our application to digitalize your routine inventory management! 
+        </p>
+        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href= "/register-user" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Register</a>
+            <a href= "/login-user" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Login</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Submit  -->
+
+<div class="px-4 py-5 text-center">
+    <h1 class="display-5 fw-bold">Submit Query</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead">Submit the items you want to store.</p>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-8">
+
+        <form action="/submit-recipe" enctype="multipart/form-data" method="POST">
+
+            <div class="row g-3">
+
+                <div class="col-12">
+                    <label for="'name" class="form-label">Name</label>
+                    <input type="text" name="companyName" id="companyName" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="'email" class="form-label">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="date" class="form-label">Submission Date</label>
+                    <input type="date" name="date" id="date" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="name" class="form-label">Items</label>
+                    <small>Example: Wheat 50KG</small>
+                    <div class="itemsList">
+                        <div class="itemsDiv mb-1">
+                            <input type="text" name="items" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="btn btn-outline-primary" id="addItemsBtn">+ Items</button>
+
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="category">Select Category</label>
+                    <select class="form-select form-control" name="category" aria-label="Category">
+                        <option selected>Select Category</option>
+                        <option value="Grains">Grains</option>
+                        <option value="Legumes">Legumes</option>
+                        <option value="Vegetables">Vegetables</option>
+                        <option value="Fruits">Fruits</option>
+                        <option value="Dairy">Dairy</option>
+                    </select>
+                    <br><br>
+                </div>
+
+
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary mb-4">Submit Item</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['table'] });
+    google.charts.setOnLoadCallback(drawTable);
+
+    function drawTable() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Warehouse');
+      data.addColumn('number', 'Total Capacity');
+      data.addColumn('number', 'Occupied Capacity');
+      data.addColumn('boolean', 'Available Capacity');
+      data.addColumn('string', 'Location');
+      data.addColumn('string', 'Location Link');
+      data.addRows([
+        ['RJ-34', 400, 300, true, 'Jaipur','https://goo.gl/maps/JFQQSiaMiHAHUJce6'],
+        ['AJ-5', 260, 260, false, 'Ajmer','https://goo.gl/maps/JFQQSiaMiHAHUJce6'],
+        ['AL-9', 547, 346, true, 'Alwar','https://goo.gl/maps/JFQQSiaMiHAHUJce6'],
+        ['BU-18', 324, 126, true, 'Bundi','https://goo.gl/maps/JFQQSiaMiHAHUJce6']
+      ]);
+
+      var table = new google.visualization.Table(document.getElementById('table_div'));
+
+      table.draw(data, { showRowNumber: true, width: '100%', height: '100%' });
+    }
+    google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Warehouses', 'Revenue (in crores)'],
+          ['GN-2', 13], ['SR-6', 83], ['AH-8', 1.4],
+          ['VR-9', 2.3]
+        ]);
+
+        var options = {
+          title: 'Revenue Shared by the Warehouse',
+          legend: 'none',
+          pieSliceText: 'label',
+          slices: {  1: {offset: 0.2}
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+  </script>
+
+
+</head>
+
+<body>
+  <h1>Statistics About Rajasthan Warehouses</h1>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Rajasthan Statistics</li>
+    </ol>
+  </nav>
+  <div id="table_div"></div>
+  <br><br>
+  <div style="display:flex; justify-content:center;">
+  <div id="piechart" style="width: 900px; height: 500px;"></div>
+  <div style="display:flex; justify-content:center;">
+    <a href="https://app.powerbi.com/view?r=eyJrIjoiYTdmN2I3MTktNDZjZi00MWE5LTg4YjEtNDYyZTAzYTdmNDU1IiwidCI6ImMzMDhjZmJlLWVmMWMtNDI4Mi1hODNkLTdkODRkMTVhNmNkNSJ9" target="_blank"><img src="/img/rajasthan-map.jpg" alt="rajasthan-map"></a> 
+  </div>
+</body>
+
+</html>
